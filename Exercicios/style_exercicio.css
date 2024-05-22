@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgb(77, 60, 230);
+}
+
+body {
+    background: whitesmoke;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
