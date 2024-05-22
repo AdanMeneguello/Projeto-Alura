@@ -2,6 +2,8 @@ let totalGeralValor = 0;
 document.getElementById("lista-produtos").innerHTML = '';
 document.getElementById("valor-total").textContent = 'R$ 0';
 
+
+
 function adicionar(){
     //recuperar o produto, quantidade e o valor
     let produto = document.getElementById("produto").value;
@@ -23,6 +25,10 @@ function adicionar(){
   </p> `
 
     document.getElementById('quantidade').value = '';
+
+    if(produto != "Fone de ouvido - R$100" && produto != "Celular - R$1400" && produto != "Oculus VR - R$5000"){
+      alert("Opção Invalida")
+   }
 }
 
 function limpar(){
