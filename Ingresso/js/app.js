@@ -12,7 +12,7 @@ function comprar(){
     else if(tipoIngresso == "superior"){
         comprarCadeiraSuperior(quantidadeInput, qtdSuperior);
     }
-    else(tipoIngresso == "inferior"){
+    else if (tipoIngresso == "inferior"){
         comprarCadeiraInferior(quantidadeInput, qtdInferior);
     }
 }
@@ -32,8 +32,8 @@ function comprarPista(quantidadeInput, qtdPista){
 function comprarCadeiraSuperior(quantidadeInput, qtdSuperior){
     let qtdFinalCadeiraSuperior = qtdSuperior - quantidadeInput;
     if(qtdFinalCadeiraSuperior > 0){
-        document.getElementById('qtd-superior').innerHTML = `<span id="qtd-superior">${qtdFinalCadeiraSuperior}</span>`;
-        alert('Compra realizada com sucesso!')
+        document.getElementById('qtd-superior').innerHTML = `<span id="qtd-superior">${qtdFinalCadeiraSuperior}</span>`
+        alert('Compra realizada com sucesso!');
     }
     else if(qtdFinalCadeiraSuperior <= 0){
         qtdFinalCadeiraSuperior = qtdSuperior + quantidadeInput;
@@ -45,7 +45,7 @@ function comprarCadeiraInferior(quantidadeInput, qtdInferior){
     let qtdFinalCadeiraInferior = qtdInferior - quantidadeInput;
     if(qtdFinalCadeiraInferior > 0){
         document.getElementById('qtd-inferior').innerHTML = `<span id="qtd-inferior">${qtdFinalCadeiraInferior}</span>`
-        alert('Compra realizada com sucesso!')
+        alert('Compra realizada com sucesso!');
     }
     else if(qtdFinalCadeiraInferior <= 0){
         qtdFinalCadeiraInferior = qtdInferior + quantidadeInput;
