@@ -3,8 +3,8 @@ function comprar(){
     let quantidadeInput = document.getElementById('qtd').value;
     
     let qtdPista = parseInt(document.getElementById('qtd-pista').textContent);
-    let qtdSuperior = document.getElementById('qtd-superior').textContent;
-    let qtdInferior = document.getElementById('qtd-inferior').textContent;
+    let qtdSuperior = parseInt(document.getElementById('qtd-superior').textContent);
+    let qtdInferior = parseInt(document.getElementById('qtd-inferior').textContent);
 
     if(tipoIngresso == "pista"){
         let qtdFinalPista = qtdPista - quantidadeInput;
@@ -16,8 +16,26 @@ function comprar(){
             alert('Quantidade indisponivel para pista!');
         }
     }
-    else if(tipoIngresso == "Cadeira superior"){
+
+    if(tipoIngresso == "superior"){
         let qtdFinalCadeiraSuperior = qtdSuperior - quantidadeInput;
-        document.getElementById('qtdSuperior').innerHTML = `<span id="qtd-superior">${qtdFinalCadeiraSuperior}</span></li>`
+        if(qtdFinalCadeiraSuperior > 0){
+            document.getElementById('qtd-superior').innerHTML = `<span id="qtd-superior">${qtdFinalCadeiraSuperior}</span>`;
+        }
+        else if(qtdFinalCadeiraSuperior <= 0){
+            qtdFinalCadeiraSuperior = qtdSuperior + quantidadeInput;
+            alert('Quantidade indisponivel para cadeira superior!');
+        }
+    }
+
+    if(tipoIngresso == "inferior"){
+        let qtdFinalCadeiraInferior = qtdInferior - quantidadeInput;
+        if(qtdFinalCadeiraInferior > 0){
+            document.getElementById('qtd-inferior').innerHTML = `<span id="qtd-inferior">${qtdFinalCadeiraInferior}</span>`
+        }
+        else if(qtdFinalCadeiraInferior <= 0){
+            qtdFinalCadeiraInferior = qtdInferior + quantidadeInput;
+            alert('Quantidade indisponivel para cadeira inferior');
+        } 
     }
 }
