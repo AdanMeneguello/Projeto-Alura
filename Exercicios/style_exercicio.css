@@ -6,7 +6,7 @@
 }
 
 body {
-    background: whitesmoke;
+    background: rgb(171, 194, 245);
     height: 100vh;
     display: flex;
     align-items: center;

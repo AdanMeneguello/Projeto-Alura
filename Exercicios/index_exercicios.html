@@ -8,15 +8,31 @@
 </head>
 <body>
     <form id="meuForm">
-        <label for="campoNome">Nome:</label>
-        <input type="text" id="campoNome" name="nome">
+        <div>
+            <label for="Input1">Input 1</label>
+            <input type="number" id="campoInput1" name="input1">
+        </div>
         
-        <label for="campoIdade">Idade:</label>
-        <input type="text" id="campoIdade" name="idade">
-    
-        <button type="button" onclick="capturarValores()">Capturar Valores</button>
-      
-      <div id='mostraNome'><span>Seu nome e idade irão aparecer aqui.</span></div>
+        <div>
+            <center><select name="operador" id="operador"><span>Operador</span>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select></center>
+        </div>
+        
+        <div>
+            <label for="Input2">Input 2</label>
+            <input type="number" id="campoInput2" name="input2">
+        </div>
+        
+        
+        <div>
+            <center><button type="button" onclick="Calculo()">Calcular</button></center>
+        </div>
+      <div id='Resultado'><center><span>Resultado: </span></center></div>
     </form>
     
     <script src="app_exercicios.js"></script>
