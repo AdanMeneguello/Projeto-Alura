@@ -1,4 +1,10 @@
 let listaNomes = [];
+let listaNomesSorteados = [];
+let listaSorteadosFinal = [];
+
+let resultadoSorteio = document.getElementById('lista-sorteio');
+let linhaSorteio;
+
 while(listaNomes.lenght){
     adicionar();
     if(sortear()){
@@ -18,7 +24,6 @@ function adicionar(){
 function sortear(){
     alert("Sorteou");
     let indiceSorteado_ListaNomes;
-    let listaNomesSorteados = [];
     let quantidade = listaNomes.length;
 
     for(let i = 0; i < quantidade; i++){
@@ -31,11 +36,6 @@ function sortear(){
     alert(listaNomesSorteados);  
     
     let index = 0;
-    
-    let resultadoSorteio = document.getElementById('lista-sorteio');
-    let linhaSorteio;
-
-    let listaSorteadosFinal = [];
     for(let y = 0; y < listaNomesSorteados.length - 1; y++){
         linhaSorteio = `<p id="lista-sorteio">${listaNomesSorteados[index]} --> ${listaNomesSorteados[index + 1]}</p>`;
         listaSorteadosFinal.push(linhaSorteio)
@@ -51,4 +51,11 @@ function ObterNumeroAleatorio (min, max){
     return Math.floor(Math.random() * (max - min) - min);
 }
 
-
+function reiniciar(){
+    listaNomes = [];
+    document.getElementById('nome-amigo').value = '';
+    document.getElementById('lista-amigos').innerHTML = `<p id="lista-amigos"></p>`;
+    listaNomesSorteados = [];
+    listaSorteadosFinal = [];
+    document.getElementById("lista-sorteio").innerHTML = `<p id="lista-sorteio"></p>`
+}
